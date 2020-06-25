@@ -1,0 +1,40 @@
+#include <iostream>
+#include <fstream>
+using namespace std;
+
+int main()
+{
+    ofstream output;
+    cout << "Saya membuka file "; 
+    output.open("data.txt");
+    if (!output)
+    {
+        cout << "File bermasalah";
+        return 1;
+    }
+    
+}
+
+
+#include <iostream>
+#include <fstream>
+using namespace std;
+
+int main()
+{
+    ifstream input;             //Deklarasi stream untuk proses input
+    
+    
+    input.open("data.txt");   //Membuka file yang sudah dibuat sebelumnya
+    if (!input)
+    {
+        cout << "File bermasalah";
+        return 1;
+    }
+    string line;
+    getline(input, line);              //Menampilkan teks baris pertama dalam file pada program sebelumnyA
+    cout << line << endl;
+    
+    input.close();
+    
+}
