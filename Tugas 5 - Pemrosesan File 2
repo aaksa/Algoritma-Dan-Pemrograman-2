@@ -1,0 +1,85 @@
+//NOMOR(1)
+#include <iostream>
+#include <fstream>
+using namespace std;
+
+//Membuat File
+int main()
+{
+    ofstream datamhs;
+
+    datamhs.open("datamhs.txt");
+    
+
+    //menulis sesuatu kedalam file
+    datamhs << "A.Aksa Nur Irwan\n";
+    datamhs << "A3\n";
+    datamhs << "13020190148\n";
+    datamhs << "3.82\n";
+
+    datamhs.close();
+    
+
+}
+//NOMOR (2)
+#include <iostream>
+#include <fstream>
+using namespace std;
+
+//Membuat File
+int main()
+{
+    ofstream output;
+
+    output.open("datatugas5.txt");
+
+    //menulis sesuatu kedalam file
+    output << "data sembarang";
+    output.close();
+
+}
+
+//NOMOR (3)
+
+#include <iostream>
+#include <fstream>
+using namespace std;
+
+//Membuat File
+int main()
+{
+    ifstream input;
+
+    input.open("datatugas5.txt");
+
+    //menulis sesuatu kedalam file
+    string line;
+    getline(input, line);
+    cout << line << endl;  //perintah menulis/menampilkan teks file
+
+    input.close();
+
+}
+
+//NOMOR(4)
+#include <iostream>
+#include <fstream>
+using namespace std;
+
+//Membuat File
+int main()
+{
+    ofstream mhsFile;
+
+    mhsFile.open("datamhs.txt");
+    
+
+    //menulis sesuatu kedalam file
+    mhsFile << "A.Aksa\n";
+    mhsFile << "A3\n";
+    mhsFile << "13020190148\n";
+
+    mhsFile.close();
+    
+
+}
