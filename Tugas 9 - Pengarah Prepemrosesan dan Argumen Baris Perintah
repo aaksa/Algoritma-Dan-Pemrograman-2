@@ -1,0 +1,58 @@
+1. 
+#include <bits/stdc++.h>
+
+using namespace std;
+
+#define PI 3.147  //MACROS
+
+int main()
+
+{
+
+cout << "Nilai dari PHI adalah : " << PI << endl;
+
+return 0;
+
+}
+
+2.
+#include <bits/stdc++.h>
+
+using namespace std;
+
+#define MIN(a,b) (((a) < (b)) ? a : b )   //mencari nilai minimum
+
+int main()
+
+{
+
+ int f,k;
+
+cin >> f >> k ;
+
+cout << "Nilai terkecil adalah  : " <<< MIN(f,k) << endl;
+
+return 0;
+
+}
+
+3.
+#include <bits/stdc++.h>
+#include "file1.h"
+using namespace std;
+
+int main()
+{
+	int f,k;
+	cin >> f >> k;
+	fungsi(f,k);
+	
+}
+4.
+#include <assert.h>
+#define FNAME "test.c"
+int main(void)
+{
+#line 777 FNAME
+        assert(2+2 == 5);
+}
