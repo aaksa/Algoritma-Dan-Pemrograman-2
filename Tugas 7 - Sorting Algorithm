@@ -1,0 +1,230 @@
+#include<iostream>
+#include <vector>       //vector
+#include <algorithm> //sort()
+using namespace std;
+
+int main()
+{
+    vector<int> v = {1,82,4,11,29,5,20,11,8,10,3};
+
+    cout << "Sebelum di urutkan:\n";
+    for(auto it =v.begin(); it != v.end(); ++it)
+    {
+        cout << *it <<endl;
+    }
+    sort(v.begin(), v.end());
+    cout << "TEKNIK SORTING DSC: \n";
+    for(auto it =v.end(); it >= v.begin(); --it)
+    {
+        cout << *it <<endl;
+    }
+    sort(v.begin(), v.end());
+    cout << "TEKNIK SORTING ASC: \n";
+    for(auto it =v.begin(); it != v.end(); ++it)
+    {
+        cout << *it <<endl;
+    }
+}
+
+#include <iostream>
+using namespace std;
+  
+int shellSort(int arr[], int N)
+{
+for (int gap = N/2; gap > 0; gap /= 2) {
+ for (int i = gap; i < N; i += 1) {
+      
+int temp = arr[i];
+int j;
+for (j = i; j >= gap && arr[j - gap] > temp; j -= gap)
+arr[j] = arr[j - gap];
+   
+      arr[j] = temp;
+   }
+}
+return 0;
+}
+  
+int main()
+{
+int arr[] = {45,23,53,43,18};
+   
+int N = sizeof(arr)/sizeof(arr[0]);
+  
+ cout << "Array sebelum diurutkan: \n";
+ for (int i=0; i<N; i++)
+ cout << arr[i] << " ";
+  
+ shellSort(arr, N);
+  
+cout << "\nArray setelah diurutkan: \n";
+for (int i=0; i<N; i++)
+cout << arr[i] << " ";
+ 
+ return 0;
+}
+
+#include <iostream>
+using namespace std;
+void merge(int *,int, int , int );
+void merge_sort(int *arr, int low, int high)
+{
+   int mid;
+   if (low < high){
+     
+      mid=(low+high)/2;
+      merge_sort(arr,low,mid);
+      merge_sort(arr,mid+1,high);
+      
+      merge(arr,low,high,mid);
+   }
+}
+// Merge sort
+void merge(int *arr, int low, int high, int mid)
+{
+   int i, j, k, c[50];
+   i = low;
+   k = low;
+   j = mid + 1;
+   while (i <= mid && j <= high) {
+   if (arr[i] < arr[j]) {
+   c[k] = arr[i];
+   k++;
+   i++;
+}
+else {
+   c[k] = arr[j];
+   k++;
+   j++;
+   }
+}
+  
+while (i <= mid) {
+   c[k] = arr[i];
+   k++;
+   i++;
+}
+while (j <= high) {
+   c[k] = arr[j];
+   k++;
+   j++;
+}
+for (i = low; i < k; i++) {
+   arr[i] = c[i];
+}
+}
+
+int main()
+{
+int myarray[30], num;
+cout<<"Masukkan jumlah elemen yang ingin diurutkan:";
+cin>>num;
+cout<<"Masukkan "<<num<<" elemen yang akan diurut:";
+for (int i = 0; i < num; i++) { cin>>myarray[i];
+}
+merge_sort(myarray, 0, num-1);
+cout<<"Setelah diurut\n";
+for (int i = 0; i < num; i++)
+{
+   cout<<myarray[i]<<"\t";
+}
+}
+
+#include<iostream>
+using namespace std;
+int main ()
+{
+   int myarray[5] = { 12,4,3,1,15};
+   cout<<"\nArray : \n";
+   for(int i=0;i<5;i++)
+   {
+      cout <<myarray[i]<<"\t";
+   }
+   for(int k=1; k<5; k++)
+   {
+      int temp = myarray[k];
+      int j= k-1;
+      while(j>=0 && temp <= myarray[j])
+      {
+         myarray[j+1] = myarray[j];
+         j = j-1;
+      }
+   myarray[j+1] = temp;
+   }
+cout<<"\nArray setelah diurut\n";
+for(int i=0;i<5;i++)
+   {
+   cout <<myarray[i]<<"\t";
+   }
+}
+
+#include<iostream>
+using namespace std;
+ 
+int selectionSort (int[],int); //fungsi selection sort mencari bilangan terkecil
+int main ()
+{
+   int myarray[5] = {12,45,8,15,33};
+   int pos,temp;
+   cout<<"\n Masukkan elemnt yang akan diurut\n";
+   for(int i=0;i<5;i++)
+   {
+      cout<<myarray[i]<<"\t";
+   }
+   for(int i=0;i<5;i++)
+   {
+      pos = selectionSort (myarray,i);
+      temp = myarray[i];
+      myarray[i]=myarray[pos];
+      myarray[pos] = temp;
+   }
+   cout<<"\n Setelah di urut\n";
+   for(int i=0;i<5;i++)
+   {
+      cout<<myarray[i]<<"\t";
+   }
+return 0;
+}
+int selectionSort(int myarray[],int i)
+{
+   int ele_small,position,j;
+   ele_small = myarray[i];
+   position = i;
+   for(j=i+1;j<5;j++)
+   {
+      if(myarray[j]<ele_small)
+      {
+      ele_small = myarray[j];
+      position=j;
+      }
+   }
+   return position;
+}
+
+#include<iostream>  
+using namespace std;
+int main ()
+{
+   int i, j,temp;
+   int a[5] = {10,2,0,43,12};
+   cout <<"Array :  ...\n";
+   for(i = 0; i<5; i++) {
+   cout <<a[i]<<"\t";
+}
+cout<<endl;
+for(i = 0; i<5; i++) {
+   for(j = i+1; j<5; j++)
+   {
+      if(a[j] < a[i]) {
+         temp = a[i];
+         a[i] = a[j];
+         a[j] = temp;
+      }
+   }
+}
+cout <<"Setelah diurut...\n";
+for(i = 5; i > 0; i--) {
+   cout <<a[i]<<"\t";
+   }
+return 0;
+}
