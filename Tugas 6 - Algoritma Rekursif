@@ -1,0 +1,133 @@
+#include <iostream>
+
+using namespace std;
+
+
+int main()
+
+{
+
+   int angka;
+
+   int faktorial = 1;
+
+   cout << "Masukkan angka : ";
+
+   cin >> angka;
+
+    if (angka < 0)
+
+    {
+
+        cout << "Maaf, bilangan faktorial tidak ditemukan pada bilangan negatif";
+
+     }
+
+     else
+
+      {
+
+           for(int i = 1; i <= angka; i ++)
+
+             {
+
+                 faktorial = faktorial * i;
+
+              }
+
+       }
+
+    cout << "Faktorial : " << faktorial;
+
+}
+#include <iostream>
+
+using namespace std;
+
+void Faktorial(int bil)
+
+{
+
+   int faktorial = 1;
+
+    if (bil < 0)
+
+    {
+
+        cout << "Maaf, bilangan faktorial tidak ditemukan pada bilangan negatif";
+
+     }
+
+     else
+
+      {
+
+           for(int i = 1; i <= bil; i ++)
+
+             {
+
+                 faktorial = faktorial * i;
+
+              }
+
+       }
+
+    cout << "Faktorial : " << faktorial;
+
+}
+int main()
+
+{
+
+   int angka;
+
+   cout << "Masukkan angka : ";
+
+   cin >> angka;
+
+    Faktorial(angka);
+
+}
+
+
+
+
+#include<iostream>
+
+using namespace std;
+
+
+int deret(int bil)
+
+{
+
+     int total = 0;
+
+      for (int i = 2; i <= bil ; i++)
+
+     {
+
+            total += i;
+
+      }
+
+      cout <<"Sum dari deret yang kurang dari " << bil << " adalah : " << total;
+
+}
+
+
+int main()
+
+{
+
+   int angka;
+
+   cout << "Batas deret : ";
+
+   cin >> angka;
+
+    deret(angka);
+
+   return 0;
+
+}
