@@ -1,0 +1,122 @@
+#include <iostream>
+#include <cstring>
+using namespace std;
+
+ //NOMOR 1
+/*int main()
+{
+    string kata;
+    getline(cin,kata);
+    cout << kata.size();
+}
+
+/* //NOMOR 2
+void tukar(char& c1, char& c2)
+{
+    char temp = c1;
+    c1 = c2;
+    c2 = temp;
+}
+
+int main()
+{
+    char s[20];
+    size_t i, j;
+
+    gets(s);
+    cout << "Sebelum dibalik : " << s;
+
+    i = 0;
+    j = strlen(s)-1;
+    while (i < j)
+    {
+        tukar(s[i], s[j]); // dalam konsep array, indeks pertama ditandakan [0], indeks terakhir ditandakan [-1] dst.
+        i++, j--;
+    }   
+    cout << "\nSetelah dibalik : " << s;
+}
+*/
+
+
+/* //NOMOR 6
+int main()
+{
+    char s[20]; //malam atau katak
+    cout << "Silahkan masukkan kata atau angka: ";
+    gets(s);
+    strlwr(s);
+    int i = 0, j = strlen(s)-1;
+    while (i < j)
+    {
+        if (s[i] == s[j])
+        {
+            cout << "Hasil : POLINDROME";
+            break;
+        }
+        else
+        {
+            cout << "Hasil : Bukan Polindrome";
+            break;
+        }
+    }
+
+    
+}
+*/
+
+/*int main ()
+{
+	char kecil[25], besar[25];
+	cin >> besar;
+	for (int i = 0 ; i < strlen(besar);i++)
+	{
+		kecil[i]= besar[i] + 32;
+		cout << kecil[i];
+	}
+
+}
+*/
+
+
+int main()
+{
+	int kode_ASCII;
+	cout << "Masukkan angka untuk melihat karakter :";
+	cin >> kode_ASCII;
+	cout << (char) kode_ASCII;
+	
+}
+
+
+
+void binary(int desimal);
+
+void binary(int desimal)
+{ 
+     int sisa;
+     int hasil;
+     
+     if ( desimal <=1)
+     {
+        cout<<desimal;
+        return;
+     }
+     sisa = desimal %2;
+     hasil = desimal / 2;
+     binary(hasil);
+     cout<<sisa;
+}
+
+int main()
+{
+    int a;
+    cout << "Masukkan Bilangan yang akan dikonversi : ";
+    cin>>a;
+    cout << a << " dalam biner adalah " ; 
+    binary(a);
+    cout<<endl;
+     
+    system("pause");
+    return 0;
+
+}
